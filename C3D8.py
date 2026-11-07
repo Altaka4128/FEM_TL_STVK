@@ -280,7 +280,7 @@ class C3D8:
 
         # グリーン・ラグランジュひずみを計算する
         matGLEStrain = 0.5 * (matF.T @ matF - np.eye(3))
-        vecGLEStrain = np.array([matGLEStrain[0,0], matGLEStrain[1,1], matGLEStrain[2,2], matGLEStrain[0,1], matGLEStrain[1,2], matGLEStrain[0,2]])
+        vecGLEStrain = np.array([matGLEStrain[0,0], matGLEStrain[1,1], matGLEStrain[2,2], 2.0 * matGLEStrain[0,1], 2.0 * matGLEStrain[1,2], 2.0 * matGLEStrain[0,2]])
 
         return vecGLEStrain
 
